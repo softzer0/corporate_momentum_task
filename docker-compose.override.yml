@@ -1,0 +1,17 @@
+services:
+  corporate-momentum-api:
+    # Override for development
+    build:
+      context: .
+    volumes:
+      - ./data:/app/data
+      - .:/app  # Mount source code for development
+    environment:
+      - PYTHONUNBUFFERED=1
+      - DEBUG=true
+    # Expose additional ports for debugging if needed
+    ports:
+      - "8000:8000"
+      - "5678:5678"  # For debugging
+    # Remove restart policy for development
+    restart: "no"

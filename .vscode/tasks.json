@@ -1,0 +1,113 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Run FastAPI Server",
+            "type": "shell",
+            "windows": {
+                "command": "${workspaceFolder}/venv/Scripts/python.exe"
+            },
+            "linux": {
+                "command": "${workspaceFolder}/venv/bin/python"
+            },
+            "osx": {
+                "command": "${workspaceFolder}/venv/bin/python"
+            },
+            "args": ["-m", "uvicorn", "main:app", "--reload", "--host", "0.0.0.0", "--port", "8000"],
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "new"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Run Tests",
+            "type": "shell",
+            "windows": {
+                "command": "${workspaceFolder}/venv/Scripts/python.exe"
+            },
+            "linux": {
+                "command": "${workspaceFolder}/venv/bin/python"
+            },
+            "osx": {
+                "command": "${workspaceFolder}/venv/bin/python"
+            },
+            "args": ["-m", "pytest", "test_api.py", "-v"],
+            "group": "test",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "new"
+            }
+        },
+        {
+            "label": "Run Tests with Coverage",
+            "type": "shell",
+            "windows": {
+                "command": "${workspaceFolder}/venv/Scripts/python.exe"
+            },
+            "linux": {
+                "command": "${workspaceFolder}/venv/bin/python"
+            },
+            "osx": {
+                "command": "${workspaceFolder}/venv/bin/python"
+            },
+            "args": ["-m", "pytest", "test_api.py", "-v", "--tb=short"],
+            "group": "test",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "new"
+            }
+        },
+        {
+            "label": "Format Code",
+            "type": "shell",
+            "windows": {
+                "command": "${workspaceFolder}/venv/Scripts/python.exe"
+            },
+            "linux": {
+                "command": "${workspaceFolder}/venv/bin/python"
+            },
+            "osx": {
+                "command": "${workspaceFolder}/venv/bin/python"
+            },
+            "args": ["-m", "black", ".", "--line-length", "100"],
+            "group": "build"
+        },        {
+            "label": "Lint Code",
+            "type": "shell",
+            "windows": {
+                "command": "${workspaceFolder}/venv/Scripts/python.exe"
+            },
+            "linux": {
+                "command": "${workspaceFolder}/venv/bin/python"
+            },
+            "osx": {
+                "command": "${workspaceFolder}/venv/bin/python"
+            },
+            "args": ["-m", "pylint", "main.py"],
+            "group": "build"
+        },
+        {
+            "label": "Type Check",
+            "type": "shell",
+            "windows": {
+                "command": "${workspaceFolder}/venv/Scripts/python.exe"
+            },
+            "linux": {
+                "command": "${workspaceFolder}/venv/bin/python"
+            },
+            "osx": {
+                "command": "${workspaceFolder}/venv/bin/python"
+            },
+            "args": ["-m", "mypy", "main.py", "--strict"],
+            "group": "build"
+        }
+    ]
+}

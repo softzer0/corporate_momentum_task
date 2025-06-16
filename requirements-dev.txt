@@ -1,0 +1,16 @@
+-r requirements.txt
+
+# Code formatting and linting
+black==23.12.1
+isort==5.13.2
+pylint==3.0.3
+
+# Type checking
+mypy==1.8.0
+
+# Type stubs for third-party libraries
+types-requests==2.31.0.10
+
+# Testing
+pytest==7.4.4
+pytest-asyncio==0.23.2
